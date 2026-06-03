@@ -1,19 +1,14 @@
-cmake_minimum_required(VERSION 3.10)
-project(LibraryManagementSystem CXX)
+cmake_minimum_required(VERSION 3.15)
+project(LibraryManagementSystem VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Collect source files
-file(GLOB SOURCES "src/*.cpp")
-
-add_executable(library ${SOURCES})
-
-target_include_directories(library PRIVATE src)
-
-# Ensure data directory exists at build time
-add_custom_command(TARGET library POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E make_directory
-        $<TARGET_FILE_DIR:library>/data
-    COMMENT "Creating data directory..."
+file(GLOB SOURCES 
+    "src/*.cpp"
+    "src/*.h"
+    "*.cpp"
+    "*.h"
 )
+
+add_executable(LibraryManagementSystem ${SOURCES})
