@@ -1,0 +1,29 @@
+# Compiled binary
+library
+library.exe
+*.o
+*.out
+
+# Build directories
+build/
+cmake-build-*/
+
+# Runtime data files (generated at runtime — not tracked)
+data/books.dat
+data/transactions.dat
+data/logs.txt
+
+# IDE / Editor
+.vscode/
+.idea/
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
